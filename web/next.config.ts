@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://repairflow-fj0o.onrender.com/api/:path*",
+        destination: `${process.env.API_BASE_URL}/api/:path*`,
       },
     ];
   },
