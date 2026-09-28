@@ -1,0 +1,107 @@
+[
+  {
+    "model": "core.issue",
+    "pk": 1,
+    "fields": { "name": "display" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 2,
+    "fields": { "name": "battery" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 3,
+    "fields": { "name": "charging port" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 4,
+    "fields": { "name": "camera" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 5,
+    "fields": { "name": "speaker" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 6,
+    "fields": { "name": "microphone" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 7,
+    "fields": { "name": "network" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 8,
+    "fields": { "name": "software" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 9,
+    "fields": { "name": "sensor" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 10,
+    "fields": { "name": "motherboard" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 11,
+    "fields": { "name": "button" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 12,
+    "fields": { "name": "keypad" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 13,
+    "fields": { "name": "mousepad" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 14,
+    "fields": { "name": "performance" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 15,
+    "fields": { "name": "overheating" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 16,
+    "fields": { "name": "no power" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 17,
+    "fields": { "name": "physical damage" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 18,
+    "fields": { "name": "water damage" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 19,
+    "fields": { "name": "data recovery" }
+  },
+  {
+        "model": "core.issue",
+        "pk": 20,
+        "fields": { "name": "storage" }
+  },
+  {
+    "model": "core.issue",
+    "pk": 21,
+    "fields": { "name": "others" }
+  }
+]
