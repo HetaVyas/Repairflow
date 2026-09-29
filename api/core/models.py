@@ -1,4 +1,15 @@
-from django.db import models
+from django.db import models, transaction
+from django.utils import timezone
+
+def generate_job_number():
+    year = timezone.now().year
+    with transaction.atomic():
+        counter, _ = JobNumberCounter.objects.select_for_update().get_or_create(
+            year=year
+        )
+        counter.last_number += 1
+        counter.save()
+        return f"JOB-{year}-{counter.last_number:04d}"
 
 
 class TimeStampedModel(models.Model):
@@ -41,6 +52,13 @@ class Device(models.Model):
     def __str__(self):
         return f"{self.brand} {self.model}"
 
+class JobNumberCounter(models.Model):
+    year = models.PositiveIntegerField(unique=True)
+    last_number = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.year}: {self.last_number}"
+
 class Job(TimeStampedModel):
     class JobType(models.TextChoices):
         NEW = "new", "New"
@@ -63,7 +81,7 @@ class Job(TimeStampedModel):
     class AssignedTo(models.TextChoices):
         SELF = "self", "Self"
 
-    job_number = models.CharField(max_length=20, unique=True)
+    job_number = models.CharField(max_length=20, unique=True, default=generate_job_number)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
     device = models.ForeignKey(Device, on_delete=models.PROTECT)
     job_type = models.CharField(max_length=20, choices=JobType.choices)
